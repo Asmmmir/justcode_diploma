@@ -2,7 +2,7 @@ import React from 'react'
 import pizzaMenu from "../assets/pizza_menu.png";
 import burgerMenu from "../assets/burger_menu.png";
 import friesMenu from "../assets/fries_menu.png";
-import packaMenu from "../assets/pack_menu.png";
+import packMenu from "../assets/pack_menu.png";
 
 
 const OurMenu = () => {
@@ -13,16 +13,16 @@ const OurMenu = () => {
       <img src={pizzaMenu} alt="pizza" />
       <p>Pizza</p>
     </div>
-    <div className="menu__pizza menu__item">
+    <div className="menu__burger menu__item">
       <img src={burgerMenu} alt="burger" />
       <p>Burger</p>
     </div>
-    <div className="menu__pizza menu__item">
+    <div className="menu__fries menu__item">
       <img src={friesMenu} alt="french fries" />
       <p>Fries</p>
     </div>
-    <div className="menu__pizza menu__item">
-      <img src={packaMenu} alt="pack of food" />
+    <div className="menu__pack menu__item">
+      <img src={packMenu} alt="pack of food" />
       <p>Pack</p>
     </div>
 

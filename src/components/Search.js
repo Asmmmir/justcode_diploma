@@ -8,7 +8,7 @@ const Search = () => {
       <h2>Welcome Back</h2>
     </div>
     <div className="main__search">
-      <i className="fa fa-magnifying-glass"></i>
+      <i className="fa fa-magnifying-glass fa-2x"></i>
       <input type="text" placeholder="Search" />
     </div>
   </div>

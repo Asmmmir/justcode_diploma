@@ -9,6 +9,7 @@ const MenuList = () => {
     <div className="menu-list">
   {products && products.map((product) => (
         <MenuItem
+         id= {product._id}
           name={product.name}
           time={product.time}
           price={product.price}

@@ -11,7 +11,7 @@ const App = () => {
       const url = "http://cepbep.ddns.net:2500/api/pizzaDB/products/";
       const response = await fetch(url);
       const data = await response.json();
-      store.dispatch({ type: "SET_PRODUCTS", payload: data });
+      store.dispatch({ type: "SET_PRODUCTS", products: data });
     } catch (error) {
       console.log(error);
     }

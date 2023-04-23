@@ -1,10 +1,8 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { addToCart } from "../store/store";
+import addToCart from "../store/action-creators/addToCart";
 const MenuItem = (props) => {
-
-  const dispatch = useDispatch()
-
+  const dispatch = useDispatch();
   return (
     <>
       <div className="menu-item">
@@ -15,7 +13,9 @@ const MenuItem = (props) => {
           <h2 className="menu__name">{props.name}</h2>
           <p className="menu__prepare">{`${props.time} minutes`}</p>
           <p className="menu__price">{`$${props.price}`}</p>
-          <button onClick={() => dispatch(addToCart(props.id))} className="menu__button">+</button>
+          <button onClick={() => dispatch(addToCart(props.id,props.price))} className="menu__button">
+          +
+          </button>
         </div>
       </div>
     </>

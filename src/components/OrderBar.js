@@ -1,36 +1,31 @@
-import React, { useEffect } from "react";
+import React from "react";
 import LoginInfo from "./LoginInfo";
-import Order from "./Order";
-import {useState} from 'react'
 import { useSelector } from "react-redux";
+import CartProduct from "./CartProduct";
+
 
 const OrderBar = () => {
-  
-  const addedProducts = useSelector((state) => state.cart)
-
-
-  const getOrderedProducts = async (id) => {
-    const response = await fetch(`http://cepbep.ddns.net:2500/api/pizzaDB/products/${id}`)
-    const data = await response.json()
-    console.log(data);
-  }
-  
-  getOrderedProducts()
-
+  let addedProducts = useSelector((state) => state.products.cart);
+  let totalAmount = useSelector((state) => state.products.prices)
 
   return (
-    
     <div className="order-section">
+
       <LoginInfo />
 
       <div className="order__menu">
         <div className="order__menu-text">
-          <h1>Order Menu</h1>
+          <h1>Cart:</h1>
+          <h2 style={{ color: "orange" }}>{addedProducts ? addedProducts.length : 0}</h2>
         </div>
         <div className="order__list">
-
+          {addedProducts
+            ? addedProducts.map((id) => <CartProduct key={id} id={id} />)
+            : ""}
         </div>
-        <h1 className="order__total-price">Total price: $52.34</h1>
+        <h1>
+          Total price: <span className="order__total-price">${totalAmount ? totalAmount.reduce((acc,item) => acc + item,0).toPrecision(3) : 0}</span>
+        </h1>
       </div>
     </div>
   );

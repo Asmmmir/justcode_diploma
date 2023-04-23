@@ -181,7 +181,7 @@ color: #FFFFFF;
 }
 
 .order-section {
-  width: 20rem;
+  width: 25rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -258,13 +258,20 @@ z-index: -1;
 
 .order__menu-text {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   width: 100%;
 }
 
 .order__menu {
   width: 100%;
+}
+
+.order__list {
+  height: 30rem;
+  width: 20rem;
+  overflow-y: scroll;
+  overflow-x: auto;
 }
 
 
@@ -392,7 +399,7 @@ height: 100%;
 
   padding: 10px;
   height: 100%;
-  width: 20rem;
+  width: 18rem;
 
 }
 
@@ -416,6 +423,16 @@ width: 2.5rem;
 height: 3rem;
 font-size: 1.5rem;
 border: none;
+}
+
+.order__price {
+  color: rgba(1, 197, 80, 1);
+  font-weight: 700;
+}
+
+.order__total-price {
+  color: rgba(1, 197, 80, 1);
+  font-weight: 700;
 }
 
 .order__amount button:hover {

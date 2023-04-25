@@ -16,7 +16,8 @@ const CartProduct = (props) => {
 
   useEffect(() => {
     getOrderedProducts(props.id);
-  }, []);
+  
+  },[]);
 
   return (
     <div>

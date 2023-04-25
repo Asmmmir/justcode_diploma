@@ -9,7 +9,7 @@ const LoginInfo = () => {
         <img src={loginImg} />
         <h3>John Smith</h3>
       </div>
-      <i className="fa fa-bell fa-2x"></i>
+      <i className="fa-regular fa-bell fa-2x"></i>
     </div>
     <div className="login__card">
       <div className="bank-name">

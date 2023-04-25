@@ -1,3 +1,6 @@
+import { addProduct } from "../reducer-func/addProduct";
+import { decrement, increment } from "../reducer-func/quantityAmount";
+
 const products = (state = [], action) => {
     switch (action.type) {
       case "SET_PRODUCTS":
@@ -9,10 +12,19 @@ const products = (state = [], action) => {
         case 'ADD_PRODUCT_TO_CART': {
           return {
             ...state,
-            cart: state.cart ? [...state.cart, action.id] : [action.id],
-            prices: state.prices ? [...state.prices,action.prices] : [action.prices],
-            quantity: state.quantity ? [...state.quantity] : [action.prices]
-            
+            cart: state.cart ?  addProduct(state.cart, action.id,action.price) : [{id:action.id, quantity:1, price:action.price}],
+          }
+        }
+        case 'INCREMENT_PRODUCT_QUANTITY': {
+          return {
+            ...state,
+            cart: increment(state.cart,action.id)
+          }
+        }
+        case 'DECREMENT_PRODUCT_QUANTITY': {
+          return {
+            ...state,
+            cart: decrement(state.cart,action.id)
           }
         }
       default:
@@ -20,4 +32,7 @@ const products = (state = [], action) => {
     }
   };
   export default products
+
+
+
   

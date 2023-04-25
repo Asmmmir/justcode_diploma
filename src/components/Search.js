@@ -12,7 +12,6 @@ const Search = () => {
     );
     const data = await response.json();
     dispatch({type:'SET_PRODUCTS', products: data})
-    console.log(data);
   };
 
   return (

@@ -10,7 +10,6 @@ import store from '../store/store';
 const OurMenu = () => {
   const dispatch = useDispatch()
   const seeAll = useSelector((state) => state.products.products)
-  console.log(seeAll);
 
   const filterByName = async (type) => {
     const response = await fetch(`http://cepbep.ddns.net:2500/api/pizzaDB/products/category/${type}`)

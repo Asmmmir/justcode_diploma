@@ -1,19 +1,18 @@
-import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
+import { quantityIncrement, quantityDecrement } from "../store/action-creators/quantityCreator";
+import { useDispatch,useSelector } from "react-redux";
 
 const Order = (props) => {
+  const product = useSelector(state => state.products.cart.find(p => p.id === props.id));
+  const dispatch = useDispatch();
 
-  const [countOfProduct, setCountOfProduct] = useState(1)
+  const handleIncrement = () => {
+    dispatch(quantityIncrement(props.id));
+  };
 
-  const increaseProduct = () => {
-    setCountOfProduct((prevState) => prevState + 1 )
-  }
-  
-  const decreaseProduct = () => {
-    setCountOfProduct((prevState) => prevState - 1 )
-  }
-
-  
+  const handleDecrement = () => {
+    dispatch(quantityDecrement(props.id));
+  };
 
   return (
     <div className="order__item">
@@ -25,9 +24,9 @@ const Order = (props) => {
         <p>{`${props.time} minutes`}</p>
         <p className="order__price">{`$${props.price}`}</p>
         <div className="order__amount">
-          <button onClick={decreaseProduct}>-</button>
-          <h4>{countOfProduct}</h4>
-          <button onClick={increaseProduct}>+</button>
+          <button onClick={handleDecrement}>-</button>
+          <h4>{product.quantity}</h4>
+          <button  onClick={handleIncrement} >+</button>
         </div>
       </div>
     </div>

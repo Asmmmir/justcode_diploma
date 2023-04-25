@@ -4,12 +4,15 @@ const products = (state = [], action) => {
         return {
           ...state,
           products: action.products,
+        
         };
         case 'ADD_PRODUCT_TO_CART': {
           return {
             ...state,
             cart: state.cart ? [...state.cart, action.id] : [action.id],
-            prices: state.prices ? [...state.prices,action.prices] : [action.prices]
+            prices: state.prices ? [...state.prices,action.prices] : [action.prices],
+            quantity: state.quantity ? [...state.quantity] : [action.prices]
+            
           }
         }
       default:

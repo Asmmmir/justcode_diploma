@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import addToCart from "../store/action-creators/addToCart";
+import {addToCart} from "../store/action-creators/addToCart";
 const MenuItem = (props) => {
   const dispatch = useDispatch();
   return (

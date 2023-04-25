@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import Order from "./Order";
+import { nanoid } from "nanoid";
 
 const CartProduct = (props) => {
-  let total = 0;
   const [order, setOrder] = useState([]);
 
   const getOrderedProducts = async (id) => {
@@ -23,7 +23,7 @@ const CartProduct = (props) => {
       {order
         ? order.map((item) => (
             <Order
-              key={item._id}
+              key={nanoid()}
               id={item._id}
               name={item.name}
               time={item.time}

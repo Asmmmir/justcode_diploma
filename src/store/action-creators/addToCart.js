@@ -1,8 +1,7 @@
-const addToCart = (id,prices) => ({
+export const addToCart = (id,prices,name) => ({
     type: 'ADD_PRODUCT_TO_CART',
     id,
-    prices
+    prices,
+    name
   
   })
-
-  export default addToCart

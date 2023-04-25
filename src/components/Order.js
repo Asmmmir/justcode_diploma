@@ -1,13 +1,19 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import addToCart from "../store/action-creators/addToCart";
-const Order = (props) => {
-  const dispatch = useDispatch()
-  const [amount,setAmount] = useState(1);
+import { useDispatch, useSelector } from "react-redux";
 
+const Order = (props) => {
+
+  const [countOfProduct, setCountOfProduct] = useState(1)
+
+  const increaseProduct = () => {
+    setCountOfProduct((prevState) => prevState + 1 )
+  }
+  
+  const decreaseProduct = () => {
+    setCountOfProduct((prevState) => prevState - 1 )
+  }
 
   
-
 
   return (
     <div className="order__item">
@@ -19,9 +25,9 @@ const Order = (props) => {
         <p>{`${props.time} minutes`}</p>
         <p className="order__price">{`$${props.price}`}</p>
         <div className="order__amount">
-          <button>-</button>
-          <h4>1</h4>
-          <button >+</button>
+          <button onClick={decreaseProduct}>-</button>
+          <h4>{countOfProduct}</h4>
+          <button onClick={increaseProduct}>+</button>
         </div>
       </div>
     </div>

@@ -180,6 +180,10 @@ color: #FFFFFF;
   align-items: center;
   width: 60%;
 }
+.user__info h3 {
+  width: 50%;
+  text-align: center;
+}
 
 
 .order-section {
@@ -224,6 +228,17 @@ z-index: -1;
   color: #FFFFFF;
   font-weight: 700;
   letter-spacing: 0.07em;
+}
+
+
+.login__logout {
+  padding: 4px;
+  border: none;
+  background-color: inherit;
+}
+
+.login__logout:hover {
+  color: #FF9921
 }
 
 
@@ -440,4 +455,54 @@ border: none;
 
 .order__amount button:hover {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+/* FORM LOGIN  */
+
+
+.form-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-login input {
+  padding: 15px;
+  border-radius: 15px;
+  margin: 5px;
+  border: 1px solid #f58822;
+}
+
+.form-login label {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.form-login button {
+  padding: 15px 50px;
+  margin-top: 5px;
+  border-radius: 15px;
+  border: none;
+  background-color: #FF9921;
+}
+
+.form-login button:active {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+
+
+/* USER INFO   */
+
+
+.profile-card {
+  border: 1px solid black;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  width: 20rem
+}
+
+.profile-info {
+width: 100%;
 }

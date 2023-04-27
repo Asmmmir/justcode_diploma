@@ -3,6 +3,11 @@ import { quantityIncrement, quantityDecrement } from "../store/action-creators/q
 import { useDispatch,useSelector } from "react-redux";
 
 const Order = (props) => {
+
+
+
+
+  
   const product = useSelector(state => state.products.cart.find(p => p.id === props.id));
   const dispatch = useDispatch();
 

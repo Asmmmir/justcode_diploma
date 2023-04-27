@@ -12,11 +12,12 @@ const OrderBar = () => {
     <div className="order-section">
 
       <LoginInfo />
-
+      
       <div className="order__menu">
         <div className="order__menu-text">
           <h1>Cart:</h1>
           <h2 style={{ color: "orange" }}>{addedProducts ? addedProducts.map((product) => product.quantity).reduce((a, b) => a + b, 0) : 0}</h2>
+          <i className="fa fa-cart-shopping fa-2x"></i>
         </div>
         <div className="order__list">
           {addedProducts

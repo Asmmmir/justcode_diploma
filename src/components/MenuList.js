@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import MenuItem from "./MenuItem";
+import Footer from "./Footer";
 
 
 const MenuList = () => {
@@ -9,7 +10,8 @@ const MenuList = () => {
 
   
   return (
-    <div className="menu-list">
+
+        <div className="menu-list">
   {products && products.map((product) => (
         <MenuItem
         key={product._id}
@@ -22,6 +24,9 @@ const MenuList = () => {
         />
       ))} 
     </div>
+    
+
+
   );
 };
 

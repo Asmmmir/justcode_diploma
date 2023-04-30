@@ -1,6 +1,8 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 
 const Balance = () => {
+  const user = useSelector((state) => state.userReducer.user)
   return (
     <div className="login__card">
     <div className="bank-name">
@@ -10,7 +12,7 @@ const Balance = () => {
     <p style={{ textAlign: "center" }}>**** **** **** 5454</p>
 
     <div className="card__info">
-      <p>John Smith</p>
+      <p>{user}</p>
       <p>12/24</p>
     </div>
   </div>

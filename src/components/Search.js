@@ -1,9 +1,10 @@
 import React, { useEffect, useRef } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const Search = () => {
   const inputSearch = useRef();
   const dispatch = useDispatch()
+  const name = useSelector((state) => state.userReducer.user)
 
   const searchProduct = async (e) => {
     e.preventDefault()
@@ -17,7 +18,7 @@ const Search = () => {
   return (
     <div className="main__top">
       <div className="main__greetings">
-        <h3 style={{ opacity: 0.5 }}>Hello John</h3>
+        <h3 style={{ opacity: 0.5 }}>Hello {name ? name : 'User'}</h3>
         <h2>Welcome Back</h2>
       </div>
       <div className="main__search">

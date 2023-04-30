@@ -8,6 +8,12 @@
   font-family: Roboto, 'sans-serif';
 }
 
+#root{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 
 #app {
 display: flex;
@@ -96,7 +102,7 @@ outline:none ;
   top: 9px;
   left: 20px;
   color:rgba(0, 0, 0, 0.5);
-  z-index: 1;
+  z-index: 0;
 }
 
 
@@ -196,7 +202,7 @@ color: #FFFFFF;
 }
 
 .login__card {
-  width: 15rem;
+  width: 16rem;
   height: 9rem;
   background: linear-gradient(102.04deg, #FF9921 25.28%, #FFCB8E 96.04%), #2F2F2F;
 box-shadow: 2px 5px 40px rgba(255, 153, 33, 0.2);
@@ -213,7 +219,7 @@ flex-direction: column;
 
 .login__card::before {
   content: '';
-  width: 15rem;
+  width: 16rem;
   height: 9rem;
   position: absolute;
   background: linear-gradient(0deg, #2F2F2F, #2F2F2F), #2F2F2F;
@@ -305,6 +311,7 @@ z-index: -1;
   width: 100%;
   margin-top: 35px;
   margin-bottom: 40px;
+  flex-wrap: wrap;
 }
 
 .menu__item {
@@ -317,6 +324,7 @@ background: #FFFFFF;
 box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 border-radius: 25px;
 cursor: pointer;
+margin: 5px;
 }
 
 .menu__item p {
@@ -386,21 +394,23 @@ cursor: pointer;
 
 .menu-list {
 display: flex;
-justify-content: space-between;
+justify-content: space-around;
+flex-wrap: wrap;
 align-items: center;
-overflow-x: scroll;
-width: 50rem;
+width: 100%;
 }
 
 
 .menu-item{ 
-display: flex;
-justify-content: center;
-align-items: center;
-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-border-radius: 30px;
-padding: 10px;
-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 30px;
+    padding: 10px;
+    margin: 5px;
+    width: 25rem;
+    height: 15rem;
 
 }
 
@@ -457,6 +467,27 @@ border: none;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 
+.buy-button {
+  background: rgba(255, 153, 33, 1);
+  border: none;
+  width: 12rem;
+  height: 4rem;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 144.69%;
+  letter-spacing: 0.03em;
+  color: #FFFFFF;
+}
+
+.total__price {
+  text-align: center;
+}
+
+.buy-button:active{
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
 /* FORM LOGIN  */
 
 
@@ -505,4 +536,160 @@ border: none;
 
 .profile-info {
 width: 100%;
+}
+
+
+
+/* FOOTER  */
+
+
+
+.footer {
+  width: 100%;
+  background-color: #2F2F2F;
+  margin-top: 80rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer__social {
+  width: 20%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer__copyright{
+  color: #ffffff;
+  padding: 15px;
+}
+
+.footer__social i {
+  color: #ffffff;
+}
+
+.footer__social i:hover {
+  color: #FF9921;
+}
+
+
+/* BURGER MENU  */
+
+.burger-cart {
+  display: none;
+  z-index: 2;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: black;
+  transition: all 0.3s ease-in-out;
+}
+
+
+
+@media screen and (max-width:960px) {
+  .order-section {
+    position: fixed;
+    background-color: #FFFFFF;
+    padding: 15px;
+    border: 5px solid orange;
+    left: -105%;
+    gap:0;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    transition: 0.3s;
+    overflow-y: scroll;
+
+  }
+
+  .order-section.show {
+    left: 0;
+    top: 0;
+    margin: 0;
+    height: 100vh;
+  }
+
+  .order-section.show .login__user{
+    flex-direction: column;
+  }
+
+  .order-section.show .user__info {
+    flex-direction: column;
+  }
+
+  .order-section.show .order__menu-text {
+    flex-direction: column;
+  }
+
+
+  .order-section.show .login__card {
+    display: none;
+  }
+
+  .burger-cart.show .bar:nth-child(2) {
+    position: absolute;
+    transform: rotate(-45deg);
+    top:35px
+  }
+  
+  .burger-cart.show .bar:nth-child(1) {
+    position: absolute;
+    transform: rotate(45deg);
+    top:35px;
+  }
+  
+  .burger-cart.show .bar:nth-child(3) {
+opacity: 0;
+  }
+  .burger-cart {
+  display: block;
+  padding: 1rem;
+}
+
+.main__top{
+  flex-direction: column;
+}
+
+.main__top input {
+  width: 210px;
+}
+
+.main__greetings {
+  text-align: center;
+}
+
+.menu__item {
+  margin: 5px;
+}
+
+
+}
+
+
+@media screen and (max-width:960px) {
+.news {
+  flex-direction: column;
+}
+
+
+.news__img {
+  display: none;
+}
+
+.news__text {
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.menu-item{
+  flex-wrap: wrap;
+  width: min-content;
+  height: 25rem
+}
 }

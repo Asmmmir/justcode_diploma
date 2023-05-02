@@ -27,10 +27,18 @@ const NavMenu = () => {
           <i className="fa fa-person fa-2x"></i>
         </li>
         </Link>
-        <Link to='balance'>
+        <Link to='register'>
         <li
           className={activeIndex === 2 ? "active" : ""}
           onClick={() => handleItemClick(2)}
+        >
+       <i className="fa-solid fa-address-card fa-2x"></i>
+        </li>
+        </Link>
+        <Link to='balance'>
+        <li
+          className={activeIndex === 3 ? "active" : ""}
+          onClick={() => handleItemClick(3)}
         >
           <i className="fa fa-wallet fa-2x"></i>
         </li>

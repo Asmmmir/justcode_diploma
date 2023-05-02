@@ -523,6 +523,22 @@ border: none;
 
 
 
+/* REGISTER FORM  */
+
+
+.optional-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  display: none;
+}
+
+.optional-info.show-optional{
+  display: flex;
+}
+
+
+
 /* USER INFO   */
 
 
@@ -547,7 +563,7 @@ width: 100%;
 .footer {
   width: 100%;
   background-color: #2F2F2F;
-  margin-top: 80rem;
+  margin-top: 154rem;
 
   display: flex;
   justify-content: space-between;
@@ -598,7 +614,7 @@ width: 100%;
     background-color: #FFFFFF;
     padding: 15px;
     border: 5px solid orange;
-    left: -105%;
+    right: -105%;
     gap:0;
     flex-direction: column;
     width: 100%;
@@ -609,7 +625,7 @@ width: 100%;
   }
 
   .order-section.show {
-    left: 0;
+    right: 0;
     top: 0;
     margin: 0;
     height: 100vh;

@@ -27,7 +27,7 @@ const OrderBar = () => {
                     .reduce((a, b) => a + b, 0)
                 : 0}
             </h2>
-            <i className="fa fa-cart-shopping fa-2x"></i>
+            <i style={{color:'orange', opacity:'0.7'}} className="fa fa-cart-shopping fa-2x"></i>
           </div>
           <div className="order__list">
             {addedProducts
@@ -44,7 +44,7 @@ const OrderBar = () => {
                 ? addedProducts
                     .map((product) => product.price * product.quantity)
                     .reduce((a, b) => a + b, 0)
-                    .toPrecision(3)
+                    .toFixed(2)
                 : 0}
             </span>
           </h1>

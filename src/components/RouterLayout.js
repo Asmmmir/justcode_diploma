@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 import NavMenu from "./NavMenu";
 import OrderBar from "./OrderBar";
 import store from "../store/store";
-import Footer from "./Footer";
+
 
 const RouterLayout = () => {
   const getProducts = async () => {
@@ -31,7 +31,6 @@ const RouterLayout = () => {
         </div>
         <OrderBar />
       </div>
-      <Footer />
     </Provider>
   );
 };

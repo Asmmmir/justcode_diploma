@@ -6,7 +6,19 @@ import { useDispatch, useSelector } from 'react-redux';
 const LoginInfo = () => {
  const userSelector = useSelector((state) => state.userReducer.user)
  const dispatch = useDispatch()
+const [user, setUser] = useState('')
+ 
+ const getUser = async () => {
+  const userId = localStorage.getItem("userId");
+  const response = await axios.get(
+    `http://cepbep.ddns.net:2500/api/hotelDB/users/${userId}`
+  );
+  setUser(response.data);
+};
 
+useEffect(() => {
+  getUser();
+}, []);
 
 
 const logOut = () => {
@@ -20,25 +32,13 @@ const logOut = () => {
     <div className="login__user">
       <div className="user__info">
         <img src={loginImg} width='50px' />
-        <h3>{userSelector ? userSelector : ''}</h3>
+        <h3>{userSelector ? userSelector : user.login}</h3>
       </div>
       <button onClick={logOut} className='login__logout'>
       <i className="fa fa-right-from-bracket fa-2x"></i>
       </button>
      
     </div>
-    {/* <div className="login__card">
-      <div className="bank-name">
-        <p>Universal Card</p>
-        <div className="bank-icon"></div>
-      </div>
-      <p style={{ textAlign: "center" }}>**** **** **** 5454</p>
-
-      <div className="card__info">
-        <p>{userSelector}</p>
-        <p>12/24</p>
-      </div>
-    </div> */}
   </div>
   )
 }

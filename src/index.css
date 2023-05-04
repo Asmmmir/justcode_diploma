@@ -467,24 +467,15 @@ border: none;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 
-.buy-button {
-  background: rgba(255, 153, 33, 1);
-  border: none;
-  width: 12rem;
-  height: 4rem;
-  border-radius: 20px;
-  font-weight: 700;
-  font-size: 1.5rem;
-  line-height: 144.69%;
-  letter-spacing: 0.03em;
-  color: #FFFFFF;
-}
-
 .total__price {
   text-align: center;
 }
 
 .buy-button:active{
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.order-section button:active {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 
@@ -624,7 +615,7 @@ width: 100%;
     height: 100vh;
     transition: 0.3s;
     overflow-y: scroll;
-    width: 100%;
+    width:100%;
 
   }
 

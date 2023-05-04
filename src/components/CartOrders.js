@@ -2,10 +2,23 @@ import React from "react";
 import { useSelector } from "react-redux";
 import CartProduct from "./CartProduct";
 import { nanoid } from "nanoid";
-const CartOrders = () => {
-    
+import styled from "styled-components";
 
-    let addedProducts = useSelector((state) => state.products.cart);
+const Button = styled.button`
+  background: rgba(255, 153, 33, 1);
+  border: none;
+  width: 12rem;
+  height: 4rem;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 144.69%;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+`;
+
+const CartOrders = () => {
+  let addedProducts = useSelector((state) => state.products.cart);
   return (
     <>
       <div className="order__menu">
@@ -43,7 +56,11 @@ const CartOrders = () => {
           </span>
         </h1>
       </div>
-      {addedProducts.length === 0 ? '' : (<button className="buy-button">Buy</button>)}
+      {addedProducts.length === 0 ? (
+        ""
+      ) : (
+      <Button>Buy</Button>
+      )}
     </>
   );
 };

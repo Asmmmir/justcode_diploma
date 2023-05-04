@@ -1,5 +1,19 @@
 import React from 'react'
 import newsPizza from "../assets/pizzaMain.png";
+import styled from 'styled-components';
+
+const Button = styled.button`
+  background: rgba(255, 153, 33, 1);
+  border: none;
+  width: 12rem;
+  height: 4rem;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 144.69%;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+`;
 
 const News = () => {
   return (
@@ -14,7 +28,7 @@ const News = () => {
         commonly used to demonstrate the visual form of a document or a
         typeface without.
       </p>
-      <button>Order Now</button>
+      <Button>Order Now</Button>
     </div>
 
     <div className="news__img">

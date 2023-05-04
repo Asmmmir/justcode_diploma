@@ -21,12 +21,12 @@ const UserInfo = () => {
     <div className="profile-info">
       <div className="profile-card">
         <div className="profile__image">
-          <img src={loginImg} width="50px" />
+          <img src={loginImg} width="50px" alt="avatar" />
         </div>
         <div className="profile__info">
-          <p><b>Full name:</b> {user.fullName}</p>
-          <p><b>Email</b> {user.email}</p>
-          <p><b>Phone</b>  {user.phoneNumber}</p>
+          <p><b>{user.fullName ? 'Full name:' : 'Login:'}</b> {user.fullName ? user.fullName : user.login}</p>
+          <p><b>Email:</b> {user.email}</p>
+          <p><b>Phone:</b>  {user.phoneNumber}</p>
         </div>
       </div>
     </div>

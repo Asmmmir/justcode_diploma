@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/justcode_diploma/static/css/main.af401a51.css",
+    "main.js": "/justcode_diploma/static/js/main.4b834433.js",
+    "static/media/pizzaMain.png": "/justcode_diploma/static/media/pizzaMain.1ec1893ca35464aee136.png",
+    "static/media/login_img.png": "/justcode_diploma/static/media/login_img.8fb2e70532ce0ce9a491.png",
+    "index.html": "/justcode_diploma/index.html",
+    "main.af401a51.css.map": "/justcode_diploma/static/css/main.af401a51.css.map",
+    "main.4b834433.js.map": "/justcode_diploma/static/js/main.4b834433.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.af401a51.css",
+    "static/js/main.4b834433.js"
+  ]
+}
